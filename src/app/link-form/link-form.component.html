@@ -1,7 +1,23 @@
 <div class="form-group container">
-  <div class="form-group mb-2">
-    <input type="text" class="form-control mb-2" placeholder="Link title" />
-    <input type="text" class="form-control" placeholder="Link" />
-  </div>
-  <button class="btn btn-primary">Add Link</button>
+  <form (ngSubmit)="onAdd(f)" #f="ngForm">
+    <div class="form-group mb-2">
+      <input
+        type="text"
+        class="form-control mb-2"
+        placeholder="Link title"
+        name="linkTitle"
+        required
+        ngModel
+      />
+      <input
+        type="text"
+        class="form-control"
+        placeholder="Link"
+        name="linkAddress"
+        required
+        ngModel
+      />
+    </div>
+    <button class="btn btn-primary">Add Link</button>
+  </form>
 </div>

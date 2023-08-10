@@ -1,5 +1,6 @@
 import { Injectable } from '@angular/core';
 import { Link } from './link.model';
+import { Subject } from 'rxjs';
 
 @Injectable({
   providedIn: 'root',
@@ -22,10 +23,8 @@ export class LinksService {
     },
   ];
 
-  constructor() {}
-
   getLinks(): Link[] {
-    return [...this.links];
+    return this.links;
   }
 
   getLink(id: number | undefined): Link | undefined {
@@ -48,8 +47,6 @@ export class LinksService {
   downVote(id: number | undefined) {
     const foundEltIndex = this.links.findIndex((elt) => elt.id === id);
 
-    if (this.links[foundEltIndex].downvotes > 0) {
-      this.links[foundEltIndex].downvotes--;
-    }
+    this.links[foundEltIndex].downvotes++;
   }
 }
