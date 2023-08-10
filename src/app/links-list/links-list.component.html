@@ -1,10 +1,10 @@
 <div *ngFor="let link of links" class="link">
   <h2>{{ link.title }}</h2>
   <p>
-    <a href="">{{ link.link }}</a>
+    <a href="" target="_blank">{{ link.link }}</a>
   </p>
   <div class="controls">
-    <button class="btn btn-success">Upvote</button>
-    <button class="btn btn-danger">Downvote</button>
+    <button class="btn btn-success">Upvote ({{ link.upvotes }})</button>
+    <button class="btn btn-danger">Downvote ({{ link.downvotes }})</button>
   </div>
 </div>
