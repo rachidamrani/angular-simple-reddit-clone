@@ -17,7 +17,11 @@ export class LinkComponent implements OnInit {
     this.linkEl = this.linksService.getLink(this.linkId);
   }
 
-  onUpVote() {}
+  onUpVote() {
+    this.linksService.upVote(this.linkId);
+  }
 
-  onDownVote() {}
+  onDownVote() {
+    this.linksService.downVote(this.linkId);
+  }
 }

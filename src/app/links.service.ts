@@ -39,4 +39,17 @@ export class LinksService {
   removeLink(id: number): void {
     // code here
   }
+
+  upVote(id: number | undefined) {
+    const foundEltIndex = this.links.findIndex((elt) => elt.id === id);
+    this.links[foundEltIndex].upvotes++;
+  }
+
+  downVote(id: number | undefined) {
+    const foundEltIndex = this.links.findIndex((elt) => elt.id === id);
+
+    if (this.links[foundEltIndex].downvotes > 0) {
+      this.links[foundEltIndex].downvotes--;
+    }
+  }
 }
