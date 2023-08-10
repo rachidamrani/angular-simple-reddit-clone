@@ -1,1 +1,8 @@
-<p>links-list works!</p>
+<div *ngFor="let link of links" class="link">
+  <h2>{{ link.title }}</h2>
+  <p class="lead">{{ link.link }}</p>
+  <div class="controls">
+    <button class="btn btn-success">Upvote</button>
+    <button class="btn btn-danger">Downvote</button>
+  </div>
+</div>
