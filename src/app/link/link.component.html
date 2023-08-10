@@ -1,1 +1,12 @@
-<p>link works!</p>
+<h2>{{ linkEl?.title }}</h2>
+<p>
+  <a href="" target="_blank">{{ linkEl?.link }}</a>
+</p>
+<div class="controls">
+  <button class="btn btn-success" (click)="onUpVote()">
+    Upvote ({{ linkEl?.upvotes }})
+  </button>
+  <button class="btn btn-danger" (click)="onDownVote()">
+    Downvote ({{ linkEl?.downvotes }})
+  </button>
+</div>

@@ -28,6 +28,10 @@ export class LinksService {
     return [...this.links];
   }
 
+  getLink(id: number | undefined): Link | undefined {
+    return this.links.find((l) => l.id === id);
+  }
+
   addLink(link: Link): void {
     this.links?.push(link);
   }
