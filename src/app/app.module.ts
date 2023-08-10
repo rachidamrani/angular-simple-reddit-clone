@@ -6,6 +6,7 @@ import { HeaderComponent } from './header/header.component';
 import { LinkComponent } from './link/link.component';
 import { LinkFormComponent } from './link-form/link-form.component';
 import { LinksListComponent } from './links-list/links-list.component';
+import { FormsModule } from '@angular/forms';
 
 @NgModule({
   declarations: [
@@ -13,12 +14,10 @@ import { LinksListComponent } from './links-list/links-list.component';
     HeaderComponent,
     LinkComponent,
     LinkFormComponent,
-    LinksListComponent
+    LinksListComponent,
   ],
-  imports: [
-    BrowserModule
-  ],
+  imports: [BrowserModule, FormsModule],
   providers: [],
-  bootstrap: [AppComponent]
+  bootstrap: [AppComponent],
 })
-export class AppModule { }
+export class AppModule {}
