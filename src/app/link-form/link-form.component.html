@@ -1,23 +1,28 @@
-<div class="form-group container">
-  <form (ngSubmit)="onAdd(f)" #f="ngForm">
-    <div class="form-group mb-2">
-      <input
-        type="text"
-        class="form-control mb-2"
-        placeholder="Link title"
-        name="linkTitle"
-        required
-        ngModel
-      />
-      <input
-        type="text"
-        class="form-control"
-        placeholder="Link"
-        name="linkAddress"
-        required
-        ngModel
-      />
+<div class="container">
+  <div class="row">
+    <div class="form-group col-md-7 mx-auto p-4">
+      <form (ngSubmit)="onAdd(f)" #f="ngForm">
+        <div class="form-group mb-2">
+          <input
+            type="text"
+            class="form-control mb-2"
+            placeholder="Link title"
+            name="linkTitle"
+            required
+            ngModel
+            #linkTitle
+          />
+          <input
+            type="text"
+            class="form-control"
+            placeholder="Link"
+            name="linkAddress"
+            required
+            ngModel
+          />
+        </div>
+        <button class="btn btn-primary">Add Link</button>
+      </form>
     </div>
-    <button class="btn btn-primary">Add Link</button>
-  </form>
+  </div>
 </div>
