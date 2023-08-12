@@ -1,4 +1,4 @@
-import { Component } from '@angular/core';
+import { Component, ViewChild } from '@angular/core';
 import { LinksService } from '../links.service';
 import { NgForm } from '@angular/forms';
 
@@ -8,15 +8,16 @@ import { NgForm } from '@angular/forms';
   styleUrls: ['./link-form.component.css'],
 })
 export class LinkFormComponent {
-  addLinkForm: NgForm;
+  @ViewChild('f') addLinkForm: NgForm;
+
   linkAddress = '';
   linkTitle = '';
 
   constructor(private linkService: LinksService) {}
 
   onAdd(form: NgForm) {
-    this.linkTitle = form.value.linkTitle;
     this.linkAddress = form.value.linkAddress;
+    this.linkTitle = form.value.linkTitle;
 
     this.linkService.addLink({
       id: this.linkService.getLinks().length + 1,
@@ -25,5 +26,6 @@ export class LinkFormComponent {
       upvotes: 0,
       downvotes: 0,
     });
+    this.addLinkForm.resetForm();
   }
 }
